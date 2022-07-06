@@ -17,7 +17,7 @@ RUN apt-get update -q && DEBIAN_FRONTEND=non-interactive apt-get install -qy --n
     iputils-ping \
     tshark \
     wget \
-    wireshark-ueransim-rls 
+    wireshark-ueransim-rls \
     && apt-get upgrade -qy \
     && rm -rf /var/lib/apt/lists/*
 
