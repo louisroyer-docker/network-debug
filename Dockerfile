@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM louisroyer/base-irit
 
 LABEL maintainer="Louis Royer <louis.royer@irit.fr>" \
       org.opencontainers.image.authors="Louis Royer <louis.royer.irit.fr>" \
@@ -17,6 +17,7 @@ RUN apt-get update -q && DEBIAN_FRONTEND=non-interactive apt-get install -qy --n
     iputils-ping \
     tshark \
     wget \
+    wireshark-ueransim-rls 
     && apt-get upgrade -qy \
     && rm -rf /var/lib/apt/lists/*
 
