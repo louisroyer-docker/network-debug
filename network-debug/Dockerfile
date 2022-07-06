@@ -1,6 +1,6 @@
 FROM debian:bullseye-slim
 
-LABEl maintainer="Louis Royer <louis.royer@irit.fr>" \
+LABEL maintainer="Louis Royer <louis.royer@irit.fr>" \
       org.opencontainers.image.authors="Louis Royer <louis.royer.irit.fr>" \
       org.opencontainers.image.source="https://github.com/louisroyer-docker/network-debug"
 
