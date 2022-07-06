@@ -4,8 +4,9 @@ on:
   schedule:
     - cron: '00 04 * * Sun'
   push:
-    paths:
-      - 'network-debug/**'
+    paths-ignore:
+      - 'README.md'
+      - '.github/**'
     branches: [ master ]
   workflow_dispatch:
 
@@ -49,7 +50,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          #context: "{{defaultContext}}/network-debug"
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           build-args: BUILD_DATE=${{ steps.date.outputs.date }}
