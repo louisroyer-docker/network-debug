@@ -9,6 +9,7 @@ LABEL maintainer="Louis Royer <louis.royer@irit.fr>" \
 ARG BUILD_DATE=""
 
 RUN apt-get update -q && DEBIAN_FRONTEND=non-interactive apt-get install -qy --no-install-recommends --no-install-suggests \
+    bind9-dnsutils \
     curl \
     ethtool \
     iperf3 \
