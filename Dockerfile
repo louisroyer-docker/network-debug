@@ -11,6 +11,7 @@ ARG BUILD_DATE=""
 RUN apt-get update -q && DEBIAN_FRONTEND=non-interactive apt-get install -qy --no-install-recommends --no-install-suggests \
     bind9-dnsutils \
     curl \
+    docker-setup \
     ethtool \
     iperf3 \
     iproute2 \
@@ -22,5 +23,4 @@ RUN apt-get update -q && DEBIAN_FRONTEND=non-interactive apt-get install -qy --n
     && apt-get upgrade -qy \
     && rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT ["sleep"]
-CMD ["infinity"]
+ENTRYPOINT ["docker-setup"]
