@@ -17,6 +17,7 @@ RUN apt-get update -q && DEBIAN_FRONTEND=non-interactive apt-get install -qy --n
     iproute2 \
     iptables \
     iputils-ping \
+    make \
     tshark \
     wget \
     wireshark-ueransim-rls \
