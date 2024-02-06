@@ -1,14 +1,14 @@
 name: Docker Image CI
 
 on:
-  schedule:
-    - cron: '00 04 * * Sun'
   push:
     paths-ignore:
       - 'README.md'
       - '.github/**'
     branches: [ master ]
   workflow_dispatch:
+  repository_dispatch:
+    types: [docker-build]
 
 jobs:
    docker:
