@@ -28,6 +28,9 @@ RUN apt-get update -q && DEBIAN_FRONTEND=non-interactive apt-get install -qy --n
     wget \
     wireshark-ueransim-rls \
     && apt-get upgrade -qy \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir -p /etc/iproute2/{rt_tables.d,rt_protos.d}/ \
+    && curl -o /etc/iproute2/rt_tables.d/nextmn.conf https://raw.githubusercontent.com/nextmn/srv6/refs/heads/master/etc/iproute2/rt_tables.d/nextmn.conf \
+    && curl -o /etc/iproute2/rt_protos.d/nextmn.conf https://raw.githubusercontent.com/nextmn/srv6/refs/heads/master/etc/iproute2/rt_protos.d/nextmn.conf
 
 ENTRYPOINT ["docker-setup"]

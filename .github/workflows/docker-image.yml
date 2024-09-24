@@ -2,9 +2,8 @@ name: Docker Image CI
 
 on:
   push:
-    paths-ignore:
-      - 'README.md'
-      - '.github/**'
+    paths:
+      - 'network-debug/**'
     branches: [ master ]
   workflow_dispatch:
   repository_dispatch:
@@ -50,6 +49,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v6
         with:
+          context: "{{defaultContext}}:network-debug"
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           build-args: BUILD_DATE=${{ steps.date.outputs.date }}
